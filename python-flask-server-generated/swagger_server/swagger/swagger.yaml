@@ -42,6 +42,29 @@ paths:
         "404":
           description: not found
       x-openapi-router-controller: swagger_server.controllers.default_controller
+    delete:
+      summary: Deletes student
+      description: |
+        Deletes a single student
+      operationId: delete_student
+      parameters:
+      - name: student_id
+        in: path
+        description: the uid
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: integer
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: invalid ID
+        "404":
+          description: not found
+      x-openapi-router-controller: swagger_server.controllers.default_controller
   /student:
     post:
       summary: Add a new student
